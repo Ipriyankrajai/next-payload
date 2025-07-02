@@ -99,13 +99,7 @@ export const plugins: Plugin[] = [
     ? [
         s3Storage({
           collections: {
-            media: {
-              signedDownloads: {
-                shouldUseSignedURL: ({ _collection, filename, _req }: any) => {
-                  return filename.endsWith('.mp4')
-                },
-              },
-            },
+            media: true,
           },
           bucket: process.env.S3_BUCKET,
           config: {
